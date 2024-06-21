@@ -1,0 +1,7 @@
+name = "speedapi"
+compatibility_date ="2024-06-17"
+
+
+[vars]
+ UPSTASH_REDIS_REST_TOKEN= "Acp2AAIncDE4Y2M0M2RjODBhYWU0MjIyOWNjZjY2NjIzZTI1NTJiNnAxNTE4MzA"
+  UPSTASH_REDIS_REST_URL = "https://vocal-stag-51830.upstash.io"
