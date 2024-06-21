@@ -22,11 +22,16 @@ export default function Home() {
     const fetchData = async () => {
       if (!input) return setSearchResults(undefined);
 
-      const res = await fetch(` https://fastapi.rahuldiwedi022.workers.dev/api/search?q=${input}`);
-      const data = (await res.json()) as {results : string[]; duration: number}
-      setSearchResults(data)
+      const res = await fetch(
+        ` https://fastapi.rahuldiwedi022.workers.dev/api/search?q=${input}`
+      );
+      const data = (await res.json()) as {
+        results: string[];
+        duration: number;
+      };
+      setSearchResults(data);
     };
-    
+
     fetchData();
   }, [input]);
 
@@ -66,16 +71,26 @@ export default function Home() {
                   ))}
                 </CommandGroup>
               ) : null}
-              {searchResults?.results? (
+              {searchResults?.results ? (
                 <>
-                  <div className='h-px w-full bg-zinc-200' />
-                  <p className='p-2 text-xs text-zinc-500'>
-                   Found {searchResults.results.length} results in {searchResults?.duration.toFixed(0)}ms
+                  <div className="h-px w-full bg-zinc-200" />
+                  <p className="p-2 text-xs text-zinc-500">
+                    Found {searchResults.results.length} results in{" "}
+                    {searchResults?.duration.toFixed(0)}ms
                   </p>
-</>
-) : null}
+                </>
+              ) : null}
             </CommandList>
           </Command>
+        </div>
+      </div>
+      {/* Marquee container with animation */}
+      <div className="w-full overflow-hidden absolute bottom-20 bg-orange-100 text-purple-500 py-2">
+        <div className="inline-block whitespace-nowrap animate-marquee">
+          <p>
+            Thank you to JOSHTRIEDUPSTASH 🚀 for the valuable Insights 📓from the
+            video tutorial!
+          </p>
         </div>
       </div>
     </main>
